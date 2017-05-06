@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:a="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+    a:layout_width="match_parent"
+    a:layout_height="match_parent"
+    a:paddingTop="200dp">
+	<com.atd.xiwei.CircleView
+		a:id="@+id/cir1" 
+		app:shape="circle"
+		a:layout_marginLeft="30dp"
+		a:layout_width="100dp"
+		a:layout_height="100dp" />
+	<com.atd.xiwei.CircleView
+		a:id="@+id/cir2" 
+		app:shape="circle"
+		a:layout_toRightOf="@id/cir1"
+		app:border_width="1.5dp"
+		app:border_color="#ff0000"
+		a:layout_marginLeft="30dp"
+		a:layout_width="100dp"
+		a:layout_height="100dp" />
+	<com.atd.xiwei.CircleView
+		a:id="@+id/cir2" 
+		app:shape="rect"
+		a:layout_toRightOf="@id/cir2"
+		app:round_radius="5dp"
+		app:border_width="1.5dp"
+		app:border_color="#ff0000"
+		a:layout_marginLeft="30dp"
+		a:layout_width="100dp"
+		a:layout_height="100dp" />
+	
+		
+
+    
+</RelativeLayout>
