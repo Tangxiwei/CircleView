@@ -63,17 +63,17 @@ public class CircleView extends View
 		typedArray.recycle();
 		init();
 	}
-	private void setImageBitmap(Bitmap bitmap)
+	public  void setImageBitmap(Bitmap bitmap)
 	{
 		mBitmap = bitmap;
 		preDraw();
 	}
-	private void setImageDrawble(Drawable drawable)
+	public  void setImageDrawble(Drawable drawable)
 	{
 		getBitmapfromDrawable(drawable);
 		preDraw();
 	}
-	private void setImageResource(int resId)
+	public void setImageResource(int resId)
 	{
 		if(resId != 0)
 		{

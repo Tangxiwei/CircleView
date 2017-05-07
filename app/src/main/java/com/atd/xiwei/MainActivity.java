@@ -17,7 +17,8 @@ public class MainActivity extends AppCompatActivity
 		circle1 = (CircleView)findViewById(R.id.cir1);
 		circle2 = (CircleView)findViewById(R.id.cir2);
 		rect = (CircleView)findViewById(R.id.rect);
-		
-        
+		circle1.setImageResource(R.drawable.yanlingji);
+        circle2.setImageResource(R.drawable.yanlingji1);
+		rect.setImageResource(R.drawable.yanlingji);
     }
 }
