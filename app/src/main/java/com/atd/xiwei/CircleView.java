@@ -70,7 +70,7 @@ public class CircleView extends View
 	}
 	public  void setImageDrawble(Drawable drawable)
 	{
-		getBitmapfromDrawable(drawable);
+		getBitmapFromDrawable(drawable);
 		preDraw();
 	}
 	public void setImageResource(int resId)
@@ -78,7 +78,7 @@ public class CircleView extends View
 		if(resId != 0)
 		{
 			try{
-				mBitmap = getBitmapfromDrawable(mContext.getResources().getDrawable(resId));
+				mBitmap = getBitmapFromDrawable(mContext.getResources().getDrawable(resId));
 			}catch(Exception e)
 			{
 				Log.w("CircleView","找不到资源id"+resId);
@@ -89,7 +89,7 @@ public class CircleView extends View
 			
 		
 	}
-	private Bitmap getBitmapfromDrawable(Drawable drawable)
+	private Bitmap getBitmapFromDrawable(Drawable drawable)
 	{
 		if(drawable == null){
 			return null;
@@ -115,6 +115,35 @@ public class CircleView extends View
 			return null;
 		}
 	}
+	/*private Bitmap getBitmapFromDrawable(Drawable drawable) {
+       /* if (drawable == null) {
+            return null;
+        }
+
+        if (drawable instanceof BitmapDrawable) {
+            return ((BitmapDrawable) drawable).getBitmap();
+        }
+
+        try {
+            Bitmap bitmap;
+
+            if (drawable instanceof ColorDrawable) {
+                bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+            } else {
+                bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+            }
+
+            Canvas canvas = new Canvas(bitmap);
+            drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+            drawable.draw(canvas);
+            return bitmap;
+        } catch (OutOfMemoryError e) {
+            return null;
+        }finally
+		{
+			return ((BitmapDrawable) drawable).getBitmap();
+		}
+    }*/
 	private void init(){
 		mBitmapPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 		mBorderPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -143,8 +172,9 @@ public class CircleView extends View
 			mRcBitmap.set(mBorderWidth/2,mBorderWidth/2,mRcBorder.width()-mBorderWidth/2,mRcBorder.height()-mBorderWidth/2);
 		}
 		mCircleRadius = Math.min(mRcBitmap.height(),mRcBitmap.width());
-		invalidate();
+		
 		updateMatrixShader();
+		invalidate();
 	}
 	private void updateMatrixShader()
 	{
